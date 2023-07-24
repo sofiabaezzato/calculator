@@ -53,4 +53,4 @@ To run this project locally, follow these steps:
 2. Use the digit buttons to enter numbers for the calculation.
 3. Click on the operation buttons to perform arithmetic operations.
 4. The result will be displayed in the calculator's display area.
-5. Use the "C" button to clear the current calculation and start over.
+5. Use the "DEL" button to delete the last digit or use the "AC" button to clear the current calculation and start over.
