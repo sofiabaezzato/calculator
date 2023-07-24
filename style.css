@@ -6,8 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
 }
 
 body {
@@ -15,14 +13,11 @@ body {
     font-family: var(--body-font);
     color: var(--text-color);
     scroll-behavior: smooth;
-    background-image: url("./img/background2.jpg");
+    background-image: url("./img/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-main {
-
+    overflow: hidden;
 }
 
 button {
@@ -49,10 +44,7 @@ img {
     --text-color: #f5f2f2;
     --body-font: 'Montserrat', sans-serif;
     --big-font-size: 2.5rem;
-    --h1-font-size: 2rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.3rem;
-    --normal-font-size: 1.2rem;
+    --normal-font-size: 1.3rem;
     --small-font-size: .9rem;
     --font-regular: 400;
     --font-medium: 600;
@@ -61,34 +53,22 @@ img {
 
 /* ======================================================== */
 
-/* #imageContainer {
-    background: transparent;
-    overflow: hidden;
-    content: "";
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-size: 100% 100%;
-    
-} */
-
 .calculator-container {
     position: relative;
-    margin: 100px auto;
+    margin: 100px auto 0 auto;
     width: 300px;
-    height: 500px;
     background: rgba(255, 255, 255, 0.18);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: var(--normal-font-size);
 
 }
 
 .screen-container {
     width: 280px;
-    height: 80px;
     position: relative;
     margin: 20px auto;
     background: rgba(255, 255, 255, 0.4);
@@ -96,20 +76,28 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     flex-direction: column;
-    align-items: end;
     justify-content: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: right;
     padding: 5px 10px
 }
 
 .current-operation {
-    height: 35px;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    min-height: 35px;
+    font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
 }
 
 .last-operation {
-    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    min-height: 24px;
     font-size: 1rem;
 }
 
@@ -151,6 +139,8 @@ img {
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+    --webkit-user-select: none; /* Safari */
+    user-select: none; /* Std syntax */
 }
     
 .div1 {grid-area: 1 / 1 / 2 / 3; }
@@ -172,26 +162,43 @@ img {
 .div17 { grid-area: 5 / 2 / 6 / 3; }
 .div18 { grid-area: 5 / 3 / 6 / 5; }
 
+.alert {
+    display: flex;
+    gap: 10px;
+    margin: 30px auto;
+    max-width: fit-content;
+    padding: 18px 24px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    visibility: hidden;
+}
 
+/* .animate {
+    --webkit-animation: scale-up-center 0.3s ease-in-out 1s 2 alternate both;
+    animation: scale-up-center 0.3s ease-in-out 1s 2 alternate both;
+} */
 
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
-    height: 2.5rem;
     width: 100%;
     font-weight: 600;
     color: var(--text-color);
-    padding: 12px 0 12px;
+    padding: 10px;
     display: flex;
-
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
-.footer p {
-    font-family: 'Roboto', sans-serif;
+.footer {
     font-size: 12px;
 }
 
@@ -202,8 +209,8 @@ footer {
     gap: 12px;
 }
 
-/* .fa-github {
-    font-size: 34px;
+.fa-github {
+    font-size: 18px;
     color: var(--text-color);
     transition: transform 0.5s;
     align-items: center;
@@ -211,4 +218,11 @@ footer {
 
 .fa-github:hover {
     transform: rotate(360deg);
-} */
+}
+
+.fa-circle-exclamation {
+    font-size: 18px;
+    color: var(--text-color);
+    transition: transform 0.5s;
+    align-items: center;
+}
