@@ -11,6 +11,12 @@
 html {
     position: relative;
     min-height: 100%;
+    background: url("./img/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
 }
 
 body {
@@ -18,10 +24,8 @@ body {
     font-family: var(--body-font);
     color: var(--text-color);
     scroll-behavior: smooth;
-    background-image: url("./img/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+    
 
 }
 
