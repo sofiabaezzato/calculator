@@ -53,6 +53,7 @@ function validation() {
     currentOperationDisplay.textContent = operate(firstOperand, secondOperand, currentOperator)
     lastOperationDisplay.textContent = `${firstOperand} ${currentOperator} ${secondOperand} =`
     currentOperator = null
+    resetScreen = true;
 }
 
 function clear() {
